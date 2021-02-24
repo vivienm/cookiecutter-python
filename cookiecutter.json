@@ -1,0 +1,9 @@
+{
+  "name": "loremipsum",
+  "description": "Lorem ipsum dolor sit amet.",
+  "author": "John Doe <jdoe@example.tld>",
+  "python": "3.9",
+  "template": ["bin", "lib"],
+  "bin_name": "{{cookiecutter.name.lower()}}",
+  "lib_name": "{{cookiecutter.bin_name.replace('-', '_')}}"
+}

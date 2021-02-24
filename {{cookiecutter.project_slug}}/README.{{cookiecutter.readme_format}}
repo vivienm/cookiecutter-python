@@ -1,0 +1,8 @@
+{% if cookiecutter.readme_format == "rst" -%}
+{{ cookiecutter.project_name }}
+{{ cookiecutter.project_name|length * "=" }}
+{%- else -%}
+# {{ cookiecutter.project_name }}
+{%- endif %}
+
+{{ cookiecutter.description }}

@@ -1,25 +1,25 @@
 {
-  "name": "Lorem Ipsum",
+  "project_kind": [
+    "bin",
+    "lib"
+  ],
+  "project_name": "Lorem Ipsum",
+  "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
+  "module_name": "{{ cookiecutter.project_slug|replace('-', '_') }}",
+  "script_name": "{{ cookiecutter.project_slug }}",
   "description": "Lorem ipsum dolor sit amet.",
   "license": [
     "MIT",
     "Proprietary"
   ],
-  "author": "John Doe",
-  "email": "jdoe@example.tld",
-  "readme": [
+  "author_name": "Vivien Maisonneuve",
+  "author_email": "v.maisonneuve@gmail.com",
+  "python_version": "3.9",
+  "readme_format": [
     "rst",
     "md"
   ],
-  "python": "3.9",
-  "template": [
-    "bin",
-    "lib"
-  ],
-  "bin_name": "{{ cookiecutter.name|lower|replace(' ', '-') }}",
-  "dir_name": "{{ cookiecutter.bin_name }}",
-  "lib_name": "{{ cookiecutter.bin_name|replace('-', '_') }}",
-  "vcs": [
+  "version_control": [
     "git",
     "none"
   ]

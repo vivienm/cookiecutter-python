@@ -42,7 +42,7 @@ def install_bin_dependencies() -> None:
 
 
 def remove_main() -> None:
-    Path("src/{{ cookiecutter.lib_name }}/__main__.py").unlink()
+    Path("src/{{ cookiecutter.module_name }}/__main__.py").unlink()
 
 
 def remove_poetry_venv() -> None:
@@ -56,7 +56,7 @@ def remove_poetry_venv() -> None:
 
 
 def setup_vcs():
-    if "{{ cookiecutter.vcs }}" == "git":
+    if "{{ cookiecutter.version_control }}" == "git":
         subprocess.run(["git", "init"], check=True)
     else:
         Path(".gitignore").unlink()
@@ -64,7 +64,7 @@ def setup_vcs():
 
 def main() -> None:
     install_lib_dependencies()
-    if "{{ cookiecutter.template }}" == "bin":
+    if "{{ cookiecutter.project_kind }}" == "bin":
         install_bin_dependencies()
     else:
         remove_main()

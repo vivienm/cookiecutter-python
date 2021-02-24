@@ -5,13 +5,13 @@ from . import __version__
 
 @click.command(context_settings={"help_option_names": ["-h", "--help"]})
 @click.version_option(__version__)
-def cli():
+def cli() -> None:
     """{{ cookiecutter.description }}"""
     print("Hello world!")
 
 
-def main():
-    cli(auto_envvar_prefix="{{ cookiecutter.env_name }}")
+def main() -> None:
+    cli()
 
 
 if __name__ == "__main__":

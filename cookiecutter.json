@@ -18,6 +18,5 @@
   ],
   "bin_name": "{{ cookiecutter.name|lower|replace(' ', '-') }}",
   "dir_name": "{{ cookiecutter.bin_name }}",
-  "lib_name": "{{ cookiecutter.bin_name|replace('-', '_') }}",
-  "env_name": "{{ cookiecutter.lib_name|upper }}"
+  "lib_name": "{{ cookiecutter.bin_name|replace('-', '_') }}"
 }

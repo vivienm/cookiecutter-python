@@ -1,5 +1,5 @@
 {
-  "name": "loremipsum",
+  "name": "Lorem Ipsum",
   "description": "Lorem ipsum dolor sit amet.",
   "author": "John Doe",
   "email": "jdoe@example.tld",
@@ -11,5 +11,9 @@
   "template": [
     "bin",
     "lib"
-  ]
+  ],
+  "bin_name": "{{ cookiecutter.name|lower|replace(' ', '-') }}",
+  "dir_name": "{{ cookiecutter.bin_name }}",
+  "lib_name": "{{ cookiecutter.bin_name|replace('-', '_') }}",
+  "env_name": "{{ cookiecutter.lib_name|upper }}"
 }

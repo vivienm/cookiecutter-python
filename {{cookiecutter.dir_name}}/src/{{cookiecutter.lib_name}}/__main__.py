@@ -11,7 +11,7 @@ def cli():
 
 
 def main():
-    cli(auto_envvar_prefix="{{ cookiecutter.bin_name.replace('-', '_').upper() }}")
+    cli(auto_envvar_prefix="{{ cookiecutter.env_name }}")
 
 
 if __name__ == "__main__":

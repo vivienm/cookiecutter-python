@@ -3,6 +3,10 @@
   "description": "Lorem ipsum dolor sit amet.",
   "author": "John Doe",
   "email": "jdoe@example.tld",
+  "readme": [
+    "rst",
+    "md"
+  ],
   "python": "3.9",
   "template": [
     "bin",

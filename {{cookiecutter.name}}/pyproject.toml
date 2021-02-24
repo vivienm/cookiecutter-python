@@ -3,6 +3,7 @@ name = "{{cookiecutter.name}}"
 version = "0.1.0"
 description = "{{cookiecutter.description}}"
 authors = ["{{cookiecutter.author}} <{{cookiecutter.email}}>"]
+readme = "README.{{cookiecutter.readme}}"
 
 [tool.poetry.dependencies]
 python = "^{{cookiecutter.python}}"

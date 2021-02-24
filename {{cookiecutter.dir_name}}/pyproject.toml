@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "{{ cookiecutter.name }}"
+name = "{{ cookiecutter.lib_name }}"
 version = "0.1.0"
 license = "{{ cookiecutter.license }}"
 description = "{{ cookiecutter.description }}"

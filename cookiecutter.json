@@ -1,6 +1,10 @@
 {
   "name": "Lorem Ipsum",
   "description": "Lorem ipsum dolor sit amet.",
+  "license": [
+    "MIT",
+    "Proprietary"
+  ],
   "author": "John Doe",
   "email": "jdoe@example.tld",
   "readme": [

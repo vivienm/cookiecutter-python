@@ -15,7 +15,7 @@ jobs:
         python-version: {{ cookiecutter.python_version }}
     - run: |
         pip install -U pip
-        pip install poetry nox
+        pip install poetry nox safety
         poetry install
     - run: nox -s black
     - run: nox -s isort

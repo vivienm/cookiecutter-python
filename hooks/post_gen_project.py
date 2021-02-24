@@ -12,7 +12,6 @@ DEV_DEPS = (
     "isort",
     "mypy",
     "pytest",
-    "safety",
 )
 
 

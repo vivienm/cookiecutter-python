@@ -1,3 +1,6 @@
+import tempfile
+from pathlib import Path
+
 import nox  # type: ignore
 
 
@@ -36,4 +39,19 @@ def pytest(session):
 
 @nox.session
 def safety(session):
-    session.run("poetry", "run", "safety", "check")
+    with tempfile.TemporaryDirectory(prefix="nox_") as tmpdir:
+        requirements = Path(tmpdir) / "requirements.txt"
+        session.run(
+            "poetry",
+            "export",
+            "--dev",
+            "--format=requirements.txt",
+            f"--output={requirements}",
+        )
+        session.run(
+            "safety",
+            "check",
+            f"--file={requirements}",
+            "--full-report",
+            env={"COLUMNS": "79"},
+        )

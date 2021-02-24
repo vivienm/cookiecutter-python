@@ -22,3 +22,4 @@ jobs:
     - run: nox -s flake8
     - run: nox -s mypy
     - run: nox -s pytest
+    - run: nox -s safety

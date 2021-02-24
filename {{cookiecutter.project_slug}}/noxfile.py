@@ -32,3 +32,8 @@ def mypy(session):
 @nox.session
 def pytest(session):
     session.run("poetry", "run", "pytest")
+
+
+@nox.session
+def safety(session):
+    session.run("poetry", "run", "safety", "check")

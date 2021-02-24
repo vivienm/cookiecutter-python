@@ -55,14 +55,14 @@ def remove_poetry_venv() -> None:
     shutil.rmtree(venv_path)
 
 
-def setup_vcs():
+def setup_vcs() -> None:
     if "{{ cookiecutter.version_control }}" == "git":
         subprocess.run(["git", "init"], check=True)
     else:
         Path(".gitignore").unlink()
 
 
-def setup_ci():
+def setup_ci() -> None:
     if "{{ cookiecutter.continuous_integration }}" != "github":
         gh_path = Path(".github")
         shutil.rmtree(gh_path / "workflows")

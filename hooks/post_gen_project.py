@@ -23,7 +23,10 @@ BIN_DEPS = ("click",)
 
 def poetry_add(args: Collection[str]) -> None:
     if len(args) != 0:
-        subprocess.run(["poetry", "add", "-n", *args], check=True)
+        subprocess.run(
+            ["poetry", "add", "--lock", "--no-interaction", *args],
+            check=True,
+        )
 
 
 def install_dev_dependencies() -> None:

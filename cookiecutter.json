@@ -18,5 +18,9 @@
   ],
   "bin_name": "{{ cookiecutter.name|lower|replace(' ', '-') }}",
   "dir_name": "{{ cookiecutter.bin_name }}",
-  "lib_name": "{{ cookiecutter.bin_name|replace('-', '_') }}"
+  "lib_name": "{{ cookiecutter.bin_name|replace('-', '_') }}",
+  "vcs": [
+    "git",
+    "none"
+  ]
 }

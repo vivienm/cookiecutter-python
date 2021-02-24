@@ -23,10 +23,7 @@ BIN_DEPS = ("click",)
 
 def poetry_add(args: Collection[str]) -> None:
     if len(args) != 0:
-        subprocess.run(
-            ["poetry", "add", "-n", *args],
-            check=True,
-        )
+        subprocess.run(["poetry", "add", "-n", *args], check=True)
 
 
 def install_dev_dependencies() -> None:
@@ -41,6 +38,10 @@ def install_bin_dependencies() -> None:
     poetry_add(BIN_DEPS)
 
 
+def remove_main() -> None:
+    Path("src/{{ cookiecutter.lib_name }}/__main__.py").unlink()
+
+
 def remove_poetry_venv() -> None:
     venv_path = subprocess.run(
         ["poetry", "env", "info", "-p"],
@@ -51,14 +52,22 @@ def remove_poetry_venv() -> None:
     shutil.rmtree(venv_path)
 
 
+def setup_vcs():
+    if "{{ cookiecutter.vcs }}" == "git":
+        subprocess.run(["git", "init"], check=True)
+    else:
+        Path(".gitignore").unlink()
+
+
 def main() -> None:
     install_lib_dependencies()
     if "{{ cookiecutter.template }}" == "bin":
         install_bin_dependencies()
     else:
-        Path("src/{{ cookiecutter.lib_name }}/__main__.py").unlink()
+        remove_main()
     install_dev_dependencies()
     remove_poetry_venv()
+    setup_vcs()
 
 
 if __name__ == "__main__":

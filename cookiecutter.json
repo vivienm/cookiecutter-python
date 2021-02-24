@@ -22,5 +22,9 @@
   "version_control": [
     "git",
     "none"
+  ],
+  "continuous_integration": [
+    "github",
+    "none"
   ]
 }

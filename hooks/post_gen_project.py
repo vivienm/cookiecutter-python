@@ -62,6 +62,14 @@ def setup_vcs():
         Path(".gitignore").unlink()
 
 
+def setup_ci():
+    if "{{ cookiecutter.continuous_integration }}" != "github":
+        gh_path = Path(".github")
+        shutil.rmtree(gh_path / "workflows")
+        if next(gh_path.iterdir(), None) is None:
+            gh_path.rmdir()
+
+
 def main() -> None:
     install_lib_dependencies()
     if "{{ cookiecutter.project_kind }}" == "bin":
@@ -71,6 +79,7 @@ def main() -> None:
     install_dev_dependencies()
     remove_poetry_venv()
     setup_vcs()
+    setup_ci()
 
 
 if __name__ == "__main__":

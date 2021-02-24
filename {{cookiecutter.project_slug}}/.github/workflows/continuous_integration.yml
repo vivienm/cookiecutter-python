@@ -1,0 +1,24 @@
+name: Continuous integration
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  continuous_integration:
+    name: Continuous integration
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: {{ cookiecutter.python_version }}
+    - run: |
+        pip install -U pip
+        pip install poetry nox
+        poetry install
+    - run: nox -s black
+    - run: nox -s isort
+    - run: nox -s flake8
+    - run: nox -s mypy
+    - run: nox -s pytest

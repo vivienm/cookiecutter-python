@@ -20,13 +20,13 @@ def isort(session):
 
 
 @nox.session
-def mypy(session):
-    session.run("poetry", "run", "mypy", ".")
+def flake8(session):
+    session.run("poetry", "run", "flake8")
 
 
 @nox.session
-def flake8(session):
-    session.run("poetry", "run", "flake8")
+def mypy(session):
+    session.run("poetry", "run", "mypy", ".")
 
 
 @nox.session

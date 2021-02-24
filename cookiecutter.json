@@ -12,6 +12,6 @@
     "bin",
     "lib"
   ],
-  "bin_name": "{{cookiecutter.name.lower()}}",
-  "lib_name": "{{cookiecutter.bin_name.replace('-', '_')}}"
+  "bin_name": "{{ cookiecutter.name.lower() }}",
+  "lib_name": "{{ cookiecutter.bin_name.replace('-', '_') }}"
 }

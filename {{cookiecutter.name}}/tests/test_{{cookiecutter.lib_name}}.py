@@ -1,4 +1,4 @@
-from {{cookiecutter.lib_name}} import __version__
+from {{ cookiecutter.lib_name }} import __version__
 
 
 def test_version():

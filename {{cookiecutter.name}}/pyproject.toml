@@ -1,18 +1,18 @@
 [tool.poetry]
-name = "{{cookiecutter.name}}"
+name = "{{ cookiecutter.name }}"
 version = "0.1.0"
-description = "{{cookiecutter.description}}"
-authors = ["{{cookiecutter.author}} <{{cookiecutter.email}}>"]
-readme = "README.{{cookiecutter.readme}}"
+description = "{{ cookiecutter.description }}"
+authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}>"]
+readme = "README.{{ cookiecutter.readme }}"
 
 [tool.poetry.dependencies]
-python = "^{{cookiecutter.python}}"
+python = "^{{ cookiecutter.python }}"
 
 [tool.poetry.dev-dependencies]
 
 {% if cookiecutter.template == "bin" -%}
 [tool.poetry.scripts]
-{{cookiecutter.bin_name}} = "{{cookiecutter.lib_name}}.__main__:main"
+{{ cookiecutter.bin_name }} = "{{ cookiecutter.lib_name }}.__main__:main"
 
 {% endif -%}
 [build-system]

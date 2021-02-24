@@ -52,10 +52,10 @@ def remove_poetry_venv() -> None:
 
 def main() -> None:
     install_lib_dependencies()
-    if "{{cookiecutter.template}}" == "bin":
+    if "{{ cookiecutter.template }}" == "bin":
         install_bin_dependencies()
     else:
-        Path("src/{{cookiecutter.lib_name}}/__main__.py").unlink()
+        Path("src/{{ cookiecutter.lib_name }}/__main__.py").unlink()
     install_dev_dependencies()
     remove_poetry_venv()
 

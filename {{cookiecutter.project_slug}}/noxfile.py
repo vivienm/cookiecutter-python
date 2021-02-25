@@ -1,7 +1,7 @@
 import tempfile
 from pathlib import Path
 
-import nox  # type: ignore
+import nox
 
 
 nox.options.default_venv_backend = "none"

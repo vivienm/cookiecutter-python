@@ -5,28 +5,23 @@ on:
   pull_request:
 
 jobs:
-  continuous_integration:
-    name: Continuous integration
+  nox:
+    name: Nox
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        nox_session:
+        - black
+        - isort
+        - flake8
+        - mypy
+        - pytest
+        - safety
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
       with:
         python-version: {{ cookiecutter.python_version }}
-    - name: Install dependencies
-      run: |
-        pip install -U pip
-        pip install poetry nox safety
-        poetry install
-    - name: Run Black
-      run: nox -s black
-    - name: Run isort
-      run: nox -s isort
-    - name: Run Flake8
-      run: nox -s flake8
-    - name: Run Mypy
-      run: nox -s mypy
-    - name: Run pytest
-      run: nox -s pytest
-    - name: Run Safety
-      run: nox -s safety
+    - run: pip install poetry nox safety
+    - run: poetry install
+    - run: nox -s {{ "${{" }} matrix.nox_session {{ "}}" }}

@@ -25,6 +25,7 @@
   ],
   "continuous_integration": [
     "github",
+    "gitlab",
     "none"
   ]
 }

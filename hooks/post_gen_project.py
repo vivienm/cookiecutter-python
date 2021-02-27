@@ -68,6 +68,8 @@ def setup_ci() -> None:
         shutil.rmtree(gh_path / "workflows")
         if next(gh_path.iterdir(), None) is None:
             gh_path.rmdir()
+    if "{{ cookiecutter.continuous_integration }}" != "gitlab":
+        Path(".gitlab-ci.yml").unlink()
 
 
 def main() -> None:

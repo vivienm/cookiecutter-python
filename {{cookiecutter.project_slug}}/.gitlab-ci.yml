@@ -1,0 +1,18 @@
+image: python:{{ cookiecutter.python_version }}
+
+nox:
+  stage: test
+  parallel:
+    matrix:
+    - NOXSESSION:
+      - black
+      - isort
+      - flake8
+      - mypy
+      - pytest
+      - safety
+  script:
+  - pip install poetry nox safety
+  - poetry config experimental.new-installer false
+  - poetry install
+  - nox

@@ -7,6 +7,7 @@ An opinionated Cookiecutter template for Python projects.
 * Package management with [Poetry](https://python-poetry.org/), using the [src directory layout](https://hynek.me/articles/testing-packaging/).
 * Formatting with [Black](https://github.com/psf/black) and [isort](https://pycqa.github.io/isort/).
 * Linting with [Flake8](https://flake8.pycqa.org/en/latest/) and [pydocstyle](https://github.com/PyCQA/pydocstyle/).
+* Typechecking with [Mypy](https://mypy.readthedocs.io/).
 * Testing with [pytest](https://docs.pytest.org/en/stable/) and [Nox](https://nox.thea.codes/en/stable/).
 * Checking vulnerabilities with [Safety](https://pyup.io/safety/).
 * Continous integration with [GitHub actions](https://github.com/features/actions) and [GitLab CI](https://docs.gitlab.com/ce/ci/).
